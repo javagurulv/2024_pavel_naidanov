@@ -85,4 +85,13 @@ JSON, XML, ...
 
 ---------------------
 
+#### Контакты ментора
+
+По любым вопросам связанным с проектом
+вы можете обратиться к ментору:
+- по емейлу: viktor.savonin@gmail.com (тема: Java Practice)
+- в Телеграм: javagurulv (тема: Java Practice)
+
+---------------------
+
 ![build](https://github.com/javagurulv/java_software_development_part_1/actions/workflows/build.yaml/badge.svg)
