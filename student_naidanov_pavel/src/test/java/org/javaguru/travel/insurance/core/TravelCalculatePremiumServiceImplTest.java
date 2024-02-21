@@ -5,6 +5,7 @@ import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
 import org.javaguru.travel.insurance.rest.TravelCalculatePremiumResponse;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 class TravelCalculatePremiumServiceImplTest {
@@ -13,7 +14,7 @@ class TravelCalculatePremiumServiceImplTest {
     public void should_populate_person_first_name() {
         var travel = new TravelCalculatePremiumServiceImpl();
         var request = new TravelCalculatePremiumRequest("John", "Doe", new Date(1), new Date(1));
-        var expected = new TravelCalculatePremiumResponse( "John", "Doe", new Date(1), new Date(1));
+        var expected = new TravelCalculatePremiumResponse( "John", "Doe", new Date(1), new Date(1), new BigDecimal(1));
         
         var calculatePremiumResponse = travel.calculatePremium(request);
 
@@ -24,7 +25,7 @@ class TravelCalculatePremiumServiceImplTest {
     public void should_populate_person_last_name() {
         var travel = new TravelCalculatePremiumServiceImpl();
         var request = new TravelCalculatePremiumRequest("John", "Doe", new Date(1), new Date(1));
-        var expected = new TravelCalculatePremiumResponse("John", "Doe", new Date(1), new Date(1));
+        var expected = new TravelCalculatePremiumResponse("John", "Doe", new Date(1), new Date(1), new BigDecimal(1));
 
         var calculatePremiumResponse = travel.calculatePremium(request);
 
@@ -35,7 +36,7 @@ class TravelCalculatePremiumServiceImplTest {
     public void should_populate_agreement_date_from() {
         var travel = new TravelCalculatePremiumServiceImpl();
         var request = new TravelCalculatePremiumRequest("John", "Doe", new Date(1), new Date(1));
-        var expected = new TravelCalculatePremiumResponse("John", "Doe", new Date(1), new Date(1));
+        var expected = new TravelCalculatePremiumResponse("John", "Doe", new Date(1), new Date(1), new BigDecimal(1));
 
         var calculatePremiumResponse = travel.calculatePremium(request);
 
@@ -46,7 +47,7 @@ class TravelCalculatePremiumServiceImplTest {
     public void should_populate_agreement_date_to() {
         var travel = new TravelCalculatePremiumServiceImpl();
         var request = new TravelCalculatePremiumRequest("John", "Doe", new Date(1), new Date(1));
-        var expected = new TravelCalculatePremiumResponse("John", "Doe", new Date(1), new Date(1));
+        var expected = new TravelCalculatePremiumResponse("John", "Doe", new Date(1), new Date(1), new BigDecimal(1));
 
         var calculatePremiumResponse = travel.calculatePremium(request);
 
