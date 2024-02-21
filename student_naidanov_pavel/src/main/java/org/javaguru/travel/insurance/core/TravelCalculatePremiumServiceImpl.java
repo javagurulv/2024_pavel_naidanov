@@ -12,11 +12,11 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
 
     @Override
     public TravelCalculatePremiumResponse calculatePremium(TravelCalculatePremiumRequest request) {
-        var daysBetween = getDays(request);
+        var daysBetween = calculateAgreementDurationInDays(request);
         return new TravelCalculatePremiumResponse(request.getPersonFirstName(), request.getPersonLastName(), request.getAgreementDateFrom(), request.getAgreementDateTo(), new BigDecimal(daysBetween));
     }
 
-    private static long getDays(TravelCalculatePremiumRequest request) {
+    private static long calculateAgreementDurationInDays(TravelCalculatePremiumRequest request) {
         var difference = request.getAgreementDateTo().getTime() - request.getAgreementDateFrom().getTime();
         return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
     }
