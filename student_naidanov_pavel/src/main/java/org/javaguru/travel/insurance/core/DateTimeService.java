@@ -1,11 +1,12 @@
 package org.javaguru.travel.insurance.core;
 
 import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
-
+@Component
 public class DateTimeService {
-    private DateTimeService() {
+    DateTimeService() {
 
     }
     static long calculateAgreementDurationInDays(TravelCalculatePremiumRequest request) {

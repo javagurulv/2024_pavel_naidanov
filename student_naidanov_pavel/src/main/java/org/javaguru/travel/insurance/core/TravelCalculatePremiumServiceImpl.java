@@ -11,6 +11,10 @@ import static org.javaguru.travel.insurance.core.DateTimeService.calculateAgreem
 
 @Component
 class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService {
+   public TravelCalculatePremiumServiceImpl(DateTimeService dateTimeService) {
+       this.dateTimeService = dateTimeService;
+   }
+    private DateTimeService dateTimeService;
 
     @Override
     public TravelCalculatePremiumResponse calculatePremium(TravelCalculatePremiumRequest request) {
