@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 
+import static org.javaguru.travel.insurance.core.DateTimeService.calculateAgreementDurationInDays;
+
 @Component
 class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService {
 
@@ -15,10 +17,4 @@ class TravelCalculatePremiumServiceImpl implements TravelCalculatePremiumService
         var daysBetween = calculateAgreementDurationInDays(request);
         return new TravelCalculatePremiumResponse(request.getPersonFirstName(), request.getPersonLastName(), request.getAgreementDateFrom(), request.getAgreementDateTo(), new BigDecimal(daysBetween));
     }
-
-    private static long calculateAgreementDurationInDays(TravelCalculatePremiumRequest request) {
-        var difference = request.getAgreementDateTo().getTime() - request.getAgreementDateFrom().getTime();
-        return TimeUnit.DAYS.convert(difference, TimeUnit.MILLISECONDS);
-    }
-
 }
