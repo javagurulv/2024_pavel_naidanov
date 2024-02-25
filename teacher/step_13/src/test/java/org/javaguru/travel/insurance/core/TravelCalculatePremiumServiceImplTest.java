@@ -13,7 +13,6 @@ import static org.mockito.Mockito.when;
 
 class TravelCalculatePremiumServiceImplTest {
 
-    private DateTimeService dateTimeService;
     private TravelCalculatePremiumServiceImpl service;
 
     private TravelCalculatePremiumRequest request;
@@ -21,7 +20,7 @@ class TravelCalculatePremiumServiceImplTest {
     @BeforeEach
     public void setUp() {
         request = createRequestWithAllFields();
-        dateTimeService = mock(DateTimeService.class);
+        DateTimeService dateTimeService = mock(DateTimeService.class);
         when(dateTimeService.getDaysBetween(request.getAgreementDateFrom(), request.getAgreementDateTo())).thenReturn(0L);
         service = new TravelCalculatePremiumServiceImpl(dateTimeService);
     }

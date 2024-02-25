@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.TimeUnit;
 @Component
 public class DateTimeService {
-    DateTimeService() {
+    public DateTimeService() {
 
     }
     static long calculateAgreementDurationInDays(TravelCalculatePremiumRequest request) {
