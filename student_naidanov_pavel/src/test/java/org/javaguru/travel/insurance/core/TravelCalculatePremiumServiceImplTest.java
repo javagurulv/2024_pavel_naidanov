@@ -5,20 +5,21 @@ import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
 import org.javaguru.travel.insurance.rest.TravelCalculatePremiumResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
+@ExtendWith(MockitoExtension.class)
 class TravelCalculatePremiumServiceImplTest {
+    @InjectMocks
     private TravelCalculatePremiumServiceImpl premiumService;
 
-    @BeforeEach
-    public void setUp() {
-        var dateTimeService = Mockito.mock(DateTimeService.class);
-        premiumService = new TravelCalculatePremiumServiceImpl(dateTimeService);
-    }
+    @Mock
+    private DateTimeService dateTimeService;
 
     @Test
     public void should_populate_person_first_name() {
