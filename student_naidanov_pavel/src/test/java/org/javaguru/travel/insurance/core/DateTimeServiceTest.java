@@ -1,7 +1,6 @@
 package org.javaguru.travel.insurance.core;
 
 import org.assertj.core.api.Assertions;
-import org.javaguru.travel.insurance.rest.TravelCalculatePremiumRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -12,7 +12,6 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TravelCalculatePremiumRequest {
-
     private String personFirstName;
     private String personLastName;
     private Date agreementDateFrom;
