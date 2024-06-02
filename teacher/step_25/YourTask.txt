@@ -1,29 +1,29 @@
-Ментор обратил ваше внимание на то,
-что даты в ответе показываются в странном формате.
+Попробуйте применить подход описанный ниже для создания мок объектов
+и внедрения их в качестве зависимостей.
 
-Вопрос:
-{
-"personFirstName" : "Vasja",
-"personLastName" : "Pupkin",
-"agreementDateFrom" : "2021-05-25",
-"agreementDateTo" : "2021-05-29"
-}
+JUnit - это библиотека, которая управляет запуском юнит тестов.
+Ее поведение можно расширять, что и сделано с помощью
+@ExtendWith(MockitoExtension.class). Узнайте, что эта штука делает
+под капотом. Так же узнайте что такое аннотации @Mock и @InjectMocks.
 
 
-Ответ:
-{
-    "errors": null,
-    "personFirstName": "Vasja",
-    "personLastName": "Pupkin",
-    "agreementDateFrom": "2021-05-25T00:00:00.000+00:00",
-    "agreementDateTo": "2021-05-29T00:00:00.000+00:00",
-    "agreementPrice": 4
-}
+@ExtendWith(MockitoExtension.class)
+class TravelCalculatePremiumServiceImplTest {
 
-Ваша задача: поменяйте формат даты в ответе на "yyyy-MM-dd".
+    @Mock private DateTimeService dateTimeService;
 
-Для этого ментор вам посоветовал воспользоваться библиотекой:
-	implementation('com.fasterxml.jackson.core:jackson-core:2.14.2')
+    @InjectMocks
+    private TravelCalculatePremiumServiceImpl service;
 
-и аннотацией @JsonFormat. Узнайте что это такое, найдите примеры
-использования в интернете.
+    private TravelCalculatePremiumRequest request;
+
+    @BeforeEach
+    public void setUp() {
+        request = createRequestWithAllFields();
+        when(dateTimeService.getDaysBetween(request.getAgreementDateFrom(), request.getAgreementDateTo())).thenReturn(0L);
+    }
+
+
+PS: не забудьте по окончанию выполнения шага создать и заполнить
+файл /documentation/Step_X_description.txt. Формат заполнения этого
+файла описан в step_1 в файле Learning_reflection.txt.

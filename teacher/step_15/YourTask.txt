@@ -1,23 +1,37 @@
-Ваша задача:
+Не обязательное задание: попробуй ChatGPT для генерации тестов!
 
-Узнайте для чего используют библиотеку Lombok.
-(https://www.baeldung.com/intro-to-project-lombok)
+Все слышали про AI (Artificial Intelligence)
+и классное приложение под названием ChatGPT.
 
-Добавьте в проект библиотеку Lombok.
+А можно ли использовать AI модели генерации текста при
+написании программного кода? Да можно, ведь программный код это текст!
 
-	compileOnly('org.projectlombok:lombok:1.18.24')
-	annotationProcessor('org.projectlombok:lombok:1.18.24')
+Ваша задача: при помощи ChatGPT или любого другого AI инструмента
+для генерации текста создать тесты для класса TravelCalculatePremiumServiceImpl.
 
-	testCompileOnly('org.projectlombok:lombok:1.18.24')
-	testAnnotationProcessor('org.projectlombok:lombok:1.18.24')
+Сначала сгенерируйте один тест на все свойства, а потом тест кейс
+для проверки каждого свойства в отдельности.
 
-В IntelliJIdea File -> Settings -> "Enable annotation processing"
-поставить галочку!
+Дайте тестам сгенерированным при помощи AI следующие названия:
+- TravelCalculatePremiumServiceImplAIOneTest
+- TravelCalculatePremiumServiceImplAIEachFieldTest
 
-Примените Lombok для генерации get/set методов и конструкторов
-для классов запроса и ответа:
+Разместите эти тесты рядом с TravelCalculatePremiumServiceImplTest.
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+Если нужно, внесите изменения в сгенерированные
+AI тесты так, чтобы они работали.
+
+Сравните написанные вами тесты вручную
+и тесты сгенерированные при помощи AI.
+
+Совет: у ChatGPT есть бесплатная версия (с ограничениями конечно).
+Для того чтобы ей воспользоваться вам понадобиться зарегистрироваться
+на сайте https://chat.openai.com.
+
+Совет: если в вашем регионе ChatGPT не доступен, поставьте VPN.
+Например, UrbanVPN или любой другой бесплатный VPN и выберите
+при подключении регион где ChatGPT доступен.
+
+PS: не забудьте по окончанию выполнения шага создать и заполнить
+файл /documentation/Step_X_description.txt. Формат заполнения этого
+файла описан в step_1 в файле Learning_reflection.txt.
